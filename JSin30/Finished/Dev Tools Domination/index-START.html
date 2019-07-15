@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+
+    // Regular
+    console.log('Regular');
+    // Interpolated
+    const inter = 'interpolated';
+    console.log(`This is an ${inter} console log`);  //back ticks are the same as: 
+    console.log('This is an %s console log', 'interpolated');
+    // Styled
+    console.log('%c This is some styled text', 'font-size:20px; background:#ffafaf');
+    // warning!
+    console.warn('This is a Warning!');
+    // Error :|
+    console.error('This is an Error!');
+    // Info
+    console.info('This is a tip');
+    // Testing
+
+    console.assert(1 + 3 === 3, 'That is false'); //only shows to console if the first part is FALSE,
+    // clearing
+    //console.clear(); // clears the console.
+    // Viewing DOM Elements
+    const p = document.querySelector('p');
+
+    console.log(p);
+    console.dir(p); //prints out all properties/methods connected to paragraph 'p'
+    // Grouping together
+    // dogs.forEach(dog => {
+    //   console.log(`This is ${dog.name}, it is ${dog.age} years old`);
+    // })
+    dogs.forEach(dog => {
+      console.group(`${dog.name}`);
+      console.log(`This is ${dog.name}`);
+      console.log(`It is ${dog.age} years old`);
+      console.groupEnd(`${dog.name}`);
+    })
+    // counting
+    console.count('Jack');
+    console.count('Jack');
+    console.count('Jack');
+    console.count('Jack');
+    console.count('Dave');
+    console.count('Dave');
+    console.count('Dave');
+    console.count('Dave');
+    console.count('Dave');
+    // timing
+    console.time('Downloading!');
+    console.timeEnd('Downloading!');
+
+
+    console.time('Downloading Slowly!');
+    setTimeout(function(){
+      console.timeEnd('Downloading Slowly!');
+    },4000);
+    
+    console.table(dogs); //displays arrays in an table
+  </script>
+</body>
+</html>

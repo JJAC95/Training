@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Default Arguments</title>
+</head>
+<body>
+<script>
+  function splitBill(total, tax = 0.2, people = 1){ //set defaults for values if none are passed when the function is called
+    return (total + (total * tax)) / people;
+    
+  }
+
+  const totalBill = splitBill(48, undefined, 3);
+</script>
+</body>
+</html>

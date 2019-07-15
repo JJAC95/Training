@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Arrow functions → → </title>
+</head>
+<body>
+<script>
+  const names = ['Jack', 'Dave', 'Charlie'];
+
+  const fullNames = names.map(function(name){ //non arrow function
+    return `${name} Cornish`;
+  });
+
+  const fullNames2 = names.map((name) => {    //arrow function with () 
+    return `${name} Cornish`;
+  });
+
+  const fullNames3 = names.map(name => {    //arrow function without ()
+    return `${name} Cornish`;
+  });
+
+  const fullNames4 = names.map(name => `${name} Cornish`); //one line implicit return
+
+  const fullNames5 = names.map(() => `Cornish`); 
+
+  const sayName = (name) => {alert(`Hi ${name}!`)}
+
+  sayName('Jack');
+  
+</script>
+</body>
+</html>

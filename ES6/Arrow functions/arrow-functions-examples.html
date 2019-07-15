@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Arrow functions examples</title>
+</head>
+<body>
+<script>
+
+  const race = '400m'
+  const winners = ['Usain Bolt','Michael Johnson', 'Roadrunner'];
+
+  const win = winners.map((winner, i) => ({ name: winner, race, place: i + 1}))
+
+  const age = [23,24,18,34,52,31,29,17,26];
+
+  const old = age.filter(age => age > 23);
+  console.log(old);
+
+</script>
+</body>
+</html>

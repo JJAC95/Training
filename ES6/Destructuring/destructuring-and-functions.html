@@ -16,13 +16,17 @@
     return converted;
   }
 
-  function tipCalc({ total = 100, tip = 0.15, tax = 0.13 } = {}) {
+  const {USD, GPB} = convertCurrency(100);
+  console.log(USD, GPB);
+
+  function tipCalc({total = 10, tip = 0.15, tax = 0.2} = {}) {
     return total + (tip * total) + (tax * total);
   }
 
-  const bill = tipCalc({ tip: 0.20, total: 200 });
+  const bill = tipCalc({ total: 200, tip: 0.2 });
+  const emptyBill = tipCalc();
   console.log(bill);
-
+  console.log(emptyBill);
 </script>
 </body>
 </html>

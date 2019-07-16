@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Iterables & Looping</title>
+</head>
+<body>
+<script>
+  const cuts = ['Slice', 'Chop', 'Shank', 'Sever'];
+
+  for (let i = 0; i<cuts.length; i++){  //regular for loop
+    console.log(cuts[i]);
+  }
+
+  cuts.forEach((cut) => { //forEach with arrow function, cant stop a forEach loop
+    console.log(cut);
+  })
+
+  for (const index in cuts) { //for in loop
+    console.log(cuts[index]);
+  }
+
+  for (const cut of cuts){  //for of loop
+    if(cut === 'Sever'){
+      console.log('dead')
+      break;
+    }
+    console.log(cut);
+  }
+</script>
+</body>
+</html>

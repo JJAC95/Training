@@ -16,13 +16,15 @@ const model = 'x5';
 const colour = 'Royal Blue';
 
 // .startsWith()
-
+  console.log(course.startsWith('RFB')); //checks start
+  console.log(flightNumber.startsWith('2018', 5)); //checks start + 5 places
 // .endsWith()
-
+  console.log(flightNumber.endsWith('jz')); //checks the full string
+  console.log(accountNumber.endsWith('31', 9)); //only takes the first 9 digits, and then checks the end
 // .includes()
-
+  console.log(accountNumber.includes('2631')); //not case sensitive
 // .repeat()
-
+  course.repeat(10);
 function leftPad(str, length = 20) {
   return `→ ${' '.repeat(length - str.length)}${str}`;
 }

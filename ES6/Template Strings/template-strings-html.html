@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Template Strings!</title>
+</head>
+<body>
+<script>
+  const person = {
+    name: 'Jack Cornish',
+    job: 'Web Developer',
+    city: 'Darlington',
+    bio: 'testtest',
+  };
+
+  const markup = `
+    <div class="person">
+      <h2>
+        ${person.name}
+        <span class="job">${person.job}</span>
+      </h2>
+      <p class="city">${person.city}</p>
+      <p class="bio">${person.bio}</p>
+    </div>
+  `;
+
+  console.log(markup);
+  document.body.innerHTML = markup;
+
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Destructuring!</title>
+</head>
+<body>
+<script>
+  const person = {
+    first: 'Jack',
+    last: 'Cornish',
+    country: 'England',
+    city: 'Darlington',
+    twitter: '@JackCornish95'
+  };
+
+  const { first, last, twitter } = person;
+  console.log(first, last, twitter);
+  
+
+  const jack = {
+    first: 'Jack',
+    last: 'Cornish',
+    links: {
+      social: {
+        twitter: 'https://twitter.com/jackcornish95',
+        facebook: 'https://facebook.com/Cornish95',
+      },
+      web: {
+        blog: 'https://wesbos.com'
+      }
+    }
+  };
+
+  const { twitter: tweet, facebook: fb } = jack.links.social;
+
+  const settings = { width: 300, color: 'black' }  // height, fontSize
+  const { width = 1000, height = 1000, color = 'red', fontSize = 90} = settings;
+
+</script>
+</body>
+</html>

@@ -8,8 +8,9 @@
 <script>
   const p = new Promise((resolve, reject) => {
     setTimeout(() => {
-      reject(Error('Err wes isn\'t cool'));
-    }, 1000);
+      reject(Error('error, couldnt resolve'));
+    },1000);
+    
   });
 
   p

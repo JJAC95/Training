@@ -8,10 +8,15 @@
 <script>
 
   const featured = ['Deep Dish', 'Pepperoni', 'Hawaiian'];
-  const specialty = ['Meatzza', 'Spicy Mama', 'Margherita'];
+  const speciality = ['Meatzza', 'Spicy Mama', 'Margherita'];
 
-  const pizzas = [...featured, 'veg', ...specialty];
+  const pizzas = [...featured, 'big boy', ...speciality];
   const fridayPizzas = [...pizzas];
+  console.log(pizzas);
+  fridayPizzas[0] = 'Jungle Madness';
+  console.log(pizzas);
+  console.log(fridayPizzas);
+
 
   const deepDish = {
     pizzaName: 'Deep Dish',

@@ -11,14 +11,12 @@
   inventors.push(...newInventors);
   console.log(inventors);
 
-  const name = ['Wes', 'Bos'];
-
-  function sayHi(first, last) {
-    alert(`Hey there ${first} ${last}`);
+  const name = ['Jack', 'Cornish']
+  function sayHello(first, last){
+    alert(`Hey there ${first} ${last}, nice to meet you!`);
   }
 
-  sayHi(...name);
-
+  sayHello(...name);  //can spread an array straight into a function instead of having to iterate over the array
 </script>
 </body>
 </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The ...Rest Param</title>
+</head>
+<body>
+<script>
+
+  function convertGBP(rate, ...amounts){
+    return amounts.map(amount => amount*rate);
+  }
+
+  const amounts = convertGBP(1.8, 10,15,3,5,8)
+  console.log(amounts);
+
+  const runner = ['Jack Cornish', '15107507', 10, 5, 2.5, 10];
+
+  const [name, id, ...runs] = runner;
+  console.log(name,id,runs);
+
+ 
+
+</script>
+</body>
+</html>

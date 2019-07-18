@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spread Examples</title>
+</head>
+<body>
+  <div class="people">
+    <p>Wes</p>
+    <p>Kait</p>
+    <p>Randy</p>
+  </div>
+<script>
+  const people = Array.from(document.querySelectorAll('.people p'));  
+  const people2 = [...document.querySelectorAll('.people p')];  
+
+  const names = people.map((person) => person.textContent );
+
+  const deepDish = {
+    pizzaName: 'Deep Dish',
+    size: 'Medium',
+    ingredients: ['Marinara', 'Italian Sausage', 'Dough', 'Cheese']
+  };
+
+  const ingredientList = ['Milk', 'Flour', ...deepDish.ingredients];
+  console.log(ingredientList);
+
+  const comments = [
+    { id: 231459, text: 'woof'},
+    { id: 486579, text: 'go dog go'},
+    { id: 196843, text: 'good boy'},
+    { id: 989561, text: 'nice dog'},
+  ];
+  const id = 196843;
+  const commInd = comments.findIndex(comment => comment.id === id);
+  
+  const newComm = [...comments.slice(0, commInd), ...comments.slice(commInd +1)];
+  console.log(newComm);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Object Literal Upgrades</title>
+</head>
+<body>
+<script>
+  const first = 'Dave';
+  const last = 'Cornish';
+  const age = 10;
+  const breed = 'Dug';
+  const dog = {
+    firstName: first,
+    last,
+    age,
+    breed,
+
+  };
+
+  console.log(`${first} ${last} is a ${breed}, and he is ${age} years old.`);
+
+  const modal = {
+    create(){    //all the same way of doing it. This one being the shortest
+
+    },
+    open: function(){
+
+    },
+    close(){
+
+    }
+  }
+
+  function invertColour(colour) {
+    return '#' + ("000000" + (0xFFFFFF ^ parseInt(colour.substring(1),16)).toString(16)).slice(-6);
+  }
+
+  const key = 'pocketColour';
+  const value = '#ff0000';
+ 
+  const tShirt = {
+    [key]: value,
+    [`${key}Opposite`]: invertColour(value)
+  };
+
+  const keys = ['size', 'color', 'weight'];
+  const values = ['medium', 'red', 100];
+
+  const shirt = {
+    [keys.shift()]: values.shift(),
+    [keys.shift()]: values.shift(),
+    [keys.shift()]: values.shift(),
+    
+  }
+
+  console.log(shirt);
+</script>
+</body>
+</html>

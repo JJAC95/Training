@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Symbols</title>
+</head>
+<body>
+<script>
+  const jack = Symbol('Jack');
+  console.log(jack);
+  const person = Symbol('Jack');
+
+  const classRoom = {
+    [Symbol('Mark')]: { grade: 50, gender: 'male'},
+    [Symbol('Jess')]: { grade: 75, gender: 'female'},
+    [Symbol('Jess')]: { grade: 64, gender: 'female'}
+  }
+
+  const syms = Object.getOwnPropertySymbols(classRoom);
+  const data = syms.map(sym => classRoom[sym]);
+  console.log(data);
+</script>
+</body>
+</html>

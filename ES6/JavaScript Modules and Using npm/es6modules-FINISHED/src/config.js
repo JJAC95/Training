@@ -9,5 +9,5 @@ export function sayHi(name) {
 
 const age = 100;
 const dog = 'snickers';
-
+export default apiKey;
 export { age as old, dog };

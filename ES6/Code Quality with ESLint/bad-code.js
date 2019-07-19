@@ -1,10 +1,11 @@
+/* globals ga twttr */
 const weather = new Promise((resolve) => {
   setTimeout(() => {
     resolve({ temp: 29, conditions: 'Sunny with Clouds' });
   }, 2000);
 });
 
-const tweets = new Promise((resolve, reject) => {
+const tweets = new Promise((resolve) => {
   setTimeout(() => {
     resolve(['I like cake', 'BBQ is good too!']);
   }, 500);
@@ -26,3 +27,6 @@ Promise
   .then((responses) => {
     console.log(responses);
   });
+
+ga.track();
+twttr.trackConverstion();

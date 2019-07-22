@@ -2,11 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Extending</title>
+  <title>Extending Arrays</title>
 </head>
 <body>
 <script>
+  class MovieCollection extends Array {
+    constructor(name, ...items) {
+      super(...items);
+      this.name = name;
+    }
+    add(movie){
+      this.push(movie);
+    }
+    topRated(limit = 10 ){      //default of 10
+      return this.sort((a, b) => (a.stars > b.stars ? -1 : 1)).slice(0, limit);
+    }
+  }
+  const movies = new MovieCollection('Jack\'s Favourite Movies',
+    {name: 'Shrek 2', stars: 10 },
+    {name: 'Bee Movie', stars: 9 },
+    {name: 'Inception', stars: 10 },
+    {name: 'Assassins Creed', stars: 1 }
+  );
 
+  movies.add({ name: 'Step Brothers', stars: 7});
 </script>
 </body>
 </html>

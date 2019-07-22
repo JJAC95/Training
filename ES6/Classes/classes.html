@@ -6,7 +6,35 @@
 </head>
 <body>
 <script>
- 
+  class Dog {
+    constructor(name, breed){
+      this.name = name;
+      this.breed = breed;
+    }
+    bark(){
+      console.log(`Bark bark! my name is ${this.name}`)
+
+    }
+    walk(){
+      console.log(`${this.breed}'s love walkies.`)
+    }
+    static info(){
+      console.log('A dog is a dog');
+    }
+    get description(){
+      return `${this.name} is a ${this.breed}`;
+    }
+    set nicknames(value){
+      this.nick = value.trim();
+    }
+    get nicknames(){
+      return this.nick;
+    }
+  }
+  
+
+ const dave = new Dog('Dave', 'Dug');
+ const jakey = new Dog('Jakey', 'good boy');
 </script>
 </body>
 </html>

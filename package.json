@@ -19,5 +19,7 @@
   "devDependencies": {
     "webpack": "^4.36.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "base-64": "^0.1.0"
+  }
 }

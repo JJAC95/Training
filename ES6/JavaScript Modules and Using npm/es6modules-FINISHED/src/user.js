@@ -1,17 +1,17 @@
-import slug from 'slugify';
+import slugify from 'slugify';
 import { url } from './config';
-import md5 from 'md5';
+import base64 from 'base-64';
 
-export default function User(name, email, website) {
-  return { name, email, website };
+export default function user (name, email, website) {
+  return { name, email, website }
 }
 
-export function createURL(name) {
-  return `${url}/users/${slug(name)}`;
+export function createURL(name){
+  return `${url}/users/${slugify(name)}`;
 }
 
 export function gravatar(email) {
-  const hash = md5(email.toLowerCase());
-  const photoURL = `https://www.gravatar.com/avatar/${hash}`;
+  const hash = base64.encode(email);
+  const photoURL = `http://www.gravatar.com/avatar/${hash}`;
   return photoURL;
 }

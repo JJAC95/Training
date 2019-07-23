@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Brunch with Sets</title>
+</head>
+<body>
+<script>
+  let dog1 = { name: 'Dave', age: 10 };
+  let dog2 = { name: 'Jakey', age: 13 };
+
+  const weak = new WeakSet([dog1, dog2]); //can only contain objects
+  console.log(weak);
+  dog1 = null;
+  console.log(weak);
+
+</script>
+</body>
+</html>

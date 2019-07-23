@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Native Promises</title>
+  </head>
+
+  <video controls class="handsome"></video>
+
+  <body>
+    <script>
+      // fetch('https://api.github.com/users/JJAC95').then(res => {
+      //   return res.json();
+      // }).then(res => {
+      //   console.log(res);
+      // }).catch(err => {
+      //   console.error('Big Error m80:', err)
+
+      // })
+
+      const video = document.querySelector(".handsome");
+
+      navigator.mediaDevices
+        .getUserMedia({ video: true })
+        .then(mediaStream => {
+          console.log(mediaStream);
+          video.srcObject = mediaStream;
+          video.load();
+          video.play();
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    </script>
+  </body>
+</html>

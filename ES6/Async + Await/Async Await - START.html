@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Custom Promises</title>
+  </head>
+
+  <body>
+    <script>
+      function breathe(amount) {
+        return new Promise((resolve, reject) => {
+          if (amount < 500) {
+            reject("Too small of a value");
+          }
+          setTimeout(() => resolve(`done for ${amount}ms`), amount);
+        });
+      }
+
+      function catchErrors(fn) {
+        return function(...args) {
+          return fn(...args).catch(err => {
+            console.error("error is:", err);
+          });
+        };
+      }
+
+      async function go(name) {
+        console.log(`Starting for ${name}`);
+        const res = await breathe(600);
+        console.log(res);
+        const res2 = await breathe(1000);
+        console.log(res2);
+        const res3 = await breathe(6000);
+        console.log(res3);
+        console.log("end");
+      }
+
+      const wrappedFunc = catchErrors(go);
+
+      wrappedFunc("Jack");
+    </script>
+  </body>
+</html>

@@ -1,2 +1,7 @@
-// let's go!
-alert("Test");
+import React from "react";
+import { render } from "react-dom";
+import StorePicker from "./components/StorePicker";
+import App from "./components/App";
+import "./css/style.css";
+render(<App />, document.querySelector("#main"));
+const store1 = new StorePicker();

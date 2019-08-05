@@ -12,7 +12,7 @@ class App extends React.Component {
     order: {}
   };
 
-  static propTpyes = {
+  static propTypes = {
     match: PropTypes.object
   };
   componentDidMount() {
@@ -116,6 +116,7 @@ class App extends React.Component {
             updateFish={this.updateFish}
             loadSampleFishes={this.loadSampleFishes}
             fishes={this.state.fishes}
+            storeId={this.props.match.params.storeId}
           />
         </div>
       </>
